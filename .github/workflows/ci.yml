@@ -44,8 +44,3 @@ jobs:
         run: chmod +x webppcli.sh
       - name: Build Emscripten
         run: ./webppcli.sh build_vanilla
-  
-  end:
-    name: The end
-    runs-on: ubuntu-latest
-    needs: [build_ems, build_vanilla]
