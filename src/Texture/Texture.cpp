@@ -34,7 +34,7 @@ Texture::~Texture()
 void Texture::load(const std::string &path)
 {
     if (_here == true) {
-	glDeleteTextures(1, &_texture_id);
+	    glDeleteTextures(1, &_texture_id);
     }
     glGenTextures(1, &_texture_id);
     glBindTexture(GL_TEXTURE_2D, _texture_id);

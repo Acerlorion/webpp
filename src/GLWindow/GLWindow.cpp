@@ -15,9 +15,9 @@ GLWindow::GLWindow(unsigned int width, unsigned int height, const std::string &t
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
     if (full == true) {
-	_window = glfwCreateWindow(width, height, title.c_str(), glfwGetPrimaryMonitor(), nullptr);
+        _window = glfwCreateWindow(width, height, title.c_str(), glfwGetPrimaryMonitor(), nullptr);
     } else {
-	_window = glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr);
+	    _window = glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr);
     }
     glfwMakeContextCurrent(_window);
     glEnable(GL_DEPTH_TEST);

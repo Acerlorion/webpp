@@ -19,10 +19,10 @@ Shader::Shader(const std::string &path, int type)
     glCompileShader(_shader);
     glGetShaderiv(_shader, GL_COMPILE_STATUS, &_status);
     if (_status != GL_TRUE) {
-	std::cout << "Shader at location : " << path << " failed to compile." << std::endl;
-	char buffer[512];
-	glGetShaderInfoLog(_shader, 512, nullptr, buffer);
-	std::cout << buffer << std::endl;
+	    std::cout << "Shader at location : " << path << " failed to compile." << std::endl;
+	    char buffer[512];
+	    glGetShaderInfoLog(_shader, 512, nullptr, buffer);
+	    std::cout << buffer << std::endl;
     }
     _here = true;
 }
@@ -35,7 +35,7 @@ Shader::~Shader()
 void Shader::load(const std::string &path, int type)
 {
     if (_here == true) {
-	glDeleteShader(_shader);
+	    glDeleteShader(_shader);
     }
     ShaderLoader::load(path, _source);
     _shader = glCreateShader(type);
@@ -44,10 +44,10 @@ void Shader::load(const std::string &path, int type)
     glCompileShader(_shader);
     glGetShaderiv(_shader, GL_COMPILE_STATUS, &_status);
     if (_status != GL_TRUE) {
-	std::cout << "Shader at location : " << path << " failed to compile." << std::endl;
-	char buffer[512];
-	glGetShaderInfoLog(_shader, 512, nullptr, buffer);
-	std::cout << buffer << std::endl;
+	    std::cout << "Shader at location : " << path << " failed to compile." << std::endl;
+	    char buffer[512];
+	    glGetShaderInfoLog(_shader, 512, nullptr, buffer);
+	    std::cout << buffer << std::endl;
     }
 }
 

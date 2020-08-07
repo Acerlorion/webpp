@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build_ems:
+    name: Building emscripten version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup emscripten
+        uses: mymindstorm/setup-emsdk@v6
+      - name: Verify
+        run: emcc -v
+      - name: Get latest CMake
+        uses: lukka/get-cmake@latest 
+      - name: Setup C++ environment
+        uses: kurocha/setup-cpp@v1
+      - name: Setup OpenGL
+        uses: openrndr/setup-opengl@v1
+      - name: Give rights to cli
+        run: chmod +x webppcli.sh
+      - name: Build Emscripten
+        run: ./webppcli.sh build_ems
+  build_vanilla:
+    name: Building vanilla version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Get latest CMake
+        uses: lukka/get-cmake@latest 
+      - name: Setup C++ environment
+        uses: kurocha/setup-cpp@v1
+      - name: Setup OpenGL
+        uses: openrndr/setup-opengl@v1
+      - name: Give rights to cli
+        run: chmod +x webppcli.sh
+      - name: Build Emscripten
+        run: ./webppcli.sh build_vanilla
