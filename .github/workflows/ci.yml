@@ -14,7 +14,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Setup emscripten
-        uses: mymindstorm/setup-emsdk
+        uses: mymindstorm/setup-emsdk@7
       - name: Verify
         run: emcc -v
       - name: Get latest CMake
@@ -22,7 +22,7 @@ jobs:
       - name: Setup C++ environment
         uses: kurocha/setup-cpp@v1
       - name: Setup OpenGL
-        uses: openrndr/setup-opengl
+        uses: openrndr/setup-opengl@1.1
       - name: Give rights to cli
         run: chmod +x webppcli.sh
       - name: Build Emscripten
