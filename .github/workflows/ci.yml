@@ -7,14 +7,14 @@ on:
     branches: [master]
 
 jobs:
-  build_ems:
-    name: Building emscripten version
+  build:
+    name: Building project
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Setup emscripten
-        uses: mymindstorm/setup-emsdk@v6
+        uses: mymindstorm/setup-emsdk@v7
       - name: Verify
         run: emcc -v
       - name: Get latest CMake
