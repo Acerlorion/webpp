@@ -26,21 +26,4 @@ jobs:
       - name: Give rights to cli
         run: chmod +x webppcli.sh
       - name: Build Emscripten
-        run: ./webppcli.sh build_ems
-  
-  build_vanilla:
-    name: Building vanilla version
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Get latest CMake
-        uses: lukka/get-cmake@latest 
-      - name: Setup C++ environment
-        uses: kurocha/setup-cpp@v1
-      - name: Setup OpenGL
-        uses: openrndr/setup-opengl@v1
-      - name: Give rights to cli
-        run: chmod +x webppcli.sh
-      - name: Build Emscripten
-        run: ./webppcli.sh build_vanilla
+        run: ./webppcli.sh build
