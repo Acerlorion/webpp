@@ -1,6 +1,6 @@
 #!/bin/bash
 
-build_ems () {
+build () {
   if [[ -d "./build" ]]; then
     rm -rf build
   fi
@@ -11,29 +11,19 @@ build_ems () {
   cd ..
 }
 
-start_ems () {
+start () {
   python -m http.server --directory ./build
 }
 
-build_vanilla () {
-  if [[ -d "./build" ]]; then
-    rm -rf build
-  fi
-  mkdir build
-  cd build
-  cmake ..
-  make
-  cd ..
-}
+if [[ $1 == "start" ]]; then
+  start
+else if [[ $1 == "build" ]]; then
+  build
+else
+  echo "Usage: webppcli [COMMAND]
 
-if [[ $1 == "start_ems" ]]; then
-  start_ems
+  build		to build the project.
+  start		to start the project.
+"
 fi
-
-if [[ $1 == "build_ems" ]]; then
-  build_ems
-fi
-
-if [[ $1 == "build_vanilla" ]]; then
-  build_vanilla
 fi

@@ -20,11 +20,11 @@ static void update(void)
         if (window.isKeyPressed(GLFW_KEY_ESCAPE) == true) {
             window.close();
         }
-	    window.clear(128, 128, 128, 255);
-	    cube.draw();
+            window.clear(128, 128, 128, 255);
+            cube.draw();
         window.display();
     } else {
-	    exit(0);
+            exit(0);
     }
 }
 
