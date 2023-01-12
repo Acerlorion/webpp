@@ -13,7 +13,7 @@ I did a very little command line interpreter in Bash to make building and starti
 ```
 
 After this command, you should have a new ```build``` folder. 
-If there is a problem, please create and issue.
+If there is a problem, please create an issue.
 
 ```
 ./webppcli.sh start
